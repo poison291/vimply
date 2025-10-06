@@ -1,9 +1,12 @@
 import React from "react";
+import Approute from "./Routes/Approute"
 
 function App() {
   return (
     <>
-      <h1 className="text-red-700">Test tailwind</h1>
+      <div>
+        <Approute />
+      </div>
     </>
   );
 }
