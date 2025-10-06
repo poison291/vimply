@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../Components/Navbar";
+import Features from "../Components/Features";
+import CompressSection from "../Components/CompressSection";
 
 const Landing = () => {
   return (
-    <div>Landing</div>
-  )
-}
+    <>
+    <div className="min-h-screen bg-gradient-to-br from-teal-100 to-white"> 
+      <Navbar />
 
-export default Landing
+
+      <div>
+        <CompressSection/>
+      </div>
+      <div>
+        {/* <Features /> */}
+      </div>
+   
+
+    </div>
+     
+    
+    </>
+  );
+};
+
+export default Landing;
