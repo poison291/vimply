@@ -30,43 +30,48 @@ console.log(`Height: ${height}`)
 console.log(`Width: ${width}`)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-white flex flex-col md:flex-row items-start justify-center p-4 gap-4">
+    <div className="min-h-screen bg-gradient-to-br  from-teal-50 to-white flex flex-col md:flex-row items-start justify-center p-4 gap-4">
       
       {/* Left Panel */}
-      <div className="flex-1 max-w-md bg-white rounded-xl shadow-lg p-6 flex flex-col items-center space-y-4">
-        <h1 className="text-2xl font-bold text-teal-600 mb-2">Upload Your Image</h1>
-        <p className="text-gray-600 text-sm mb-4 text-center">
-          Drag and drop or click to select an image file
-        </p>
-        <input
-          type="file"
-          accept=".png, .jpg, .jpeg, .webp"
-          id="fileInput"
-          className="hidden"
-          onChange={handleFileChange}
-        />
-        <label htmlFor="fileInput" className="w-full cursor-pointer">
-          <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 hover:border-teal-500 hover:bg-teal-50 transition">
-            <div className="flex justify-center mb-2">
-              <div className="bg-teal-100 p-4 rounded-full">
-                <Upload className="w-12 h-12 text-teal-500" />
-              </div>
-            </div>
-            <h2 className="text-center font-semibold text-lg mb-1">Click to upload or drag and drop</h2>
-            <p className="text-gray-500 text-sm text-center">PNG, JPG, GIF, WebP up to 10MB</p>
+     <div className="flex-1 max-w-md flex flex-col items-center space-y-4">
+  {/* Upload Box */}
+  <div className="bg-white rounded-xl shadow-lg p-6 w-full text-center">
+    <h1 className="text-2xl font-bold text-teal-600 mb-2">Upload Your Image</h1>
+    <p className="text-gray-600 text-sm mb-4">
+      Drag and drop or click to select an image file
+    </p>
+    <input
+      type="file"
+      accept=".png, .jpg, .jpeg, .webp"
+      id="fileInput"
+      className="hidden"
+      onChange={handleFileChange}
+    />
+    <label htmlFor="fileInput" className="cursor-pointer block">
+      <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 hover:border-teal-500 hover:bg-teal-50 transition">
+        <div className="flex justify-center mb-2">
+          <div className="bg-teal-100 p-4 rounded-full">
+            <Upload className="w-12 h-12 text-teal-500" />
           </div>
-        </label>
-        {previewUrl && (
-          <div className="mt-4 w-full">
-            <h3 className="text-xl font-semibold text-center mb-2">Preview</h3>
-            <img
-              src={previewUrl}
-              alt="Preview"
-              className="mx-auto max-h-48 rounded-lg shadow object-contain"
-            />
-          </div>
-        )}
+        </div>
+        <h2 className="font-semibold text-lg mb-1">Click to upload or drag and drop</h2>
+        <p className="text-gray-500 text-sm">PNG, JPG, GIF, WebP up to 10MB</p>
       </div>
+    </label>
+  </div>
+
+  {/* Preview Section (Separate Box) */}
+  {previewUrl && (
+    <div className="bg-white rounded-xl shadow-lg p-4 w-full text-center">
+      <h3 className="text-lg font-semibold text-teal-600 mb-3">Preview</h3>
+      <img
+        src={previewUrl}
+        alt="Preview"
+        className="mx-auto max-h-64 rounded-lg shadow object-contain"
+      />
+    </div>
+  )}
+</div>
 
       {/* Right Panel */}
       <div className="flex-1 max-w-md bg-white rounded-xl shadow-lg p-4 space-y-4">
